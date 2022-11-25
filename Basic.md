@@ -58,3 +58,22 @@ export default function App(){
   )
 }
 ```
+# Props
+```js
+import Student from "./Studnet"
+export default function App(){
+  return(
+    <Student name="Ashrit" email="ashrith@gmail.com"/>
+  )
+}
+```
+```js
+export default function Student(props){
+    return(
+        <>
+            <h1>Hi {props.name}</h1>
+            <h2>Email: {props.email}</h2>
+        </>
+    )
+}
+```
