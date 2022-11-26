@@ -67,6 +67,7 @@ export default function App(){
   )
 }
 ```
+## sending props value to another component
 ```js
 export default function Student(props){
     return(
@@ -75,5 +76,34 @@ export default function Student(props){
             <h2>Email: {props.email}</h2>
         </>
     )
+}
+```
+# Creating button of show or hide button
+```js
+import { useState } from "react"
+export default function App(){
+  const [status,setStatus]=useState(true)
+  return(
+    <>
+    {
+      status?<h1>Click on Button to show or hide</h1>:null
+    }
+    <button onClick={()=>setStatus(true)}>Show</button>
+    <button onClick={()=>setStatus(false)}>Hide</button>
+    </>
+  )
+}
+```
+# Creating toggle button
+```js
+import { useState } from "react"
+export default function App(){
+  const [toggle,setToggle]=useState(true);
+  return (
+    <>
+      {toggle?<h1>Click toggle to change me</h1>:null}
+      <button onClick={()=>setToggle(!toggle)}>Toggle</button>
+    </>
+  )
 }
 ```
