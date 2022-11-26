@@ -39,7 +39,7 @@ export default function App(){
   )
 }
 ```
-#Creating counter onClicking the button
+# Creating counter onClicking the button
 ```js
 import { useState } from "react"
 export default function App(){
