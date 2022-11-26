@@ -78,7 +78,7 @@ export default function Student(props){
     )
 }
 ```
-# Creating button of show or hide button
+# Creating button of show or hide content on onClick event
 ```js
 import { useState } from "react"
 export default function App(){
