@@ -146,6 +146,57 @@ export default function App(){
   )
 }
 ```
+# Basic form validation
+```js
+import { useState } from "react";
+
+export default function Profile(){
+    const [name,setName]=useState('');
+    const [password,setPassword]=useState('');
+    const [nameErr,setnameErr]=useState(false);
+    const [passErr,setpassErr]=useState(false);
+    function loginHandle(e){
+        e.preventDefault();
+        if(name.length<3 || password.length<3){
+            alert('values are not correct:')
+        }
+        else{
+            alert('all values are good')
+        }
+   }
+    function nameValidation(e){
+        const textLength=e.target.value.length;
+        if(textLength<3){
+            setnameErr(true)
+        }
+        else{
+            setnameErr(false)
+        }
+        setName(e.target.value);
+   }
+   function passValidation(e){
+    const passLength=e.target.value.length;
+    if(passLength<3){
+        setpassErr(true)
+    }
+    else{
+        setpassErr(false)
+    }
+    setPassword(e.target.value);
+}
+   return(<>
+        <form onSubmit={loginHandle}>
+            <input type='text' placeholder='enter your name' onChange={nameValidation}/>
+            {nameErr?<span>not valid length</span>:null}
+            <br/><br/>
+            <input type='password' placeholder='enter your password' onChange={passValidation}/>
+            {passErr?<span>not valid password length</span>:null}
+            <br/><br/>
+            <button>Submit</button>
+        </form>
+    </>)
+}
+```
 # IF-ELSE
 ```JS
 import { useState } from "react"
