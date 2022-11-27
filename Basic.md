@@ -107,3 +107,42 @@ export default function App(){
   )
 }
 ```
+# form handling
+```js
+import { useState } from "react";
+
+export default function App(){
+    const [name,setName]=useState('')
+    const [password,setPassword]=useState('')
+    const [select,setSelect]=useState('')
+    const [check,setCheck]=useState(false)
+
+  function getData(e){
+    console.log(name,password,select,check);
+    e.preventDefault();//this function helps to prevent submit the form by reloading of page
+  }
+  return(
+    <>
+        <form onSubmit={getData}>
+            <input type="text" placeholder="enter your name" onChange={(e)=>setName(e.target.value)}/>
+            <br/>
+            <br/>
+            <input type="password" placeholder="enter your password" onChange={(e)=>setPassword(e.target.value)}/>
+            <br/>
+            <br/>
+            <select onChange={(e)=>setSelect(e.target.value)}>
+                <option>Select from below options</option>
+                <option>Hindi</option>
+                <option>English</option>
+            </select>
+            <br/>
+            <br/>
+            <input type="checkbox" onChange={(e)=>setCheck(e.target.checked)}/><span>Terms and conditions apply</span>
+            <br/>
+            <br/>
+            <button type="submit" onClick={getData}>Submit</button>
+        </form>
+    </>
+  )
+}
+```
