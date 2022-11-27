@@ -146,3 +146,23 @@ export default function App(){
   )
 }
 ```
+# IF-ELSE
+```JS
+import { useState } from "react"
+export default function Profile(){
+    const [user,setUser]=useState(0)
+    return(
+        user?<h1>Hello user</h1>:<h1>Welcome guest</h1>
+    )
+}
+```
+# TERNARY (IF-ELSEIF-ELSE)
+```JS
+import { useState } from "react"
+export default function Profile(){
+    const [user,setUser]=useState(2)
+    return(
+        user==1?<h1>Hello user {user}</h1>:user==2?<h1>Hello user {user}</h1> : <h1>Welcome Guest</h1>
+    )
+}
+```
