@@ -78,6 +78,24 @@ export default function Student(props){
     )
 }
 ```
+# Passing props as function
+```js
+import Profile from './Profile'
+export default function App(){
+    function test(){
+        alert("I am from app component")
+    }
+    return (<><Profile data={test}/></>)
+}
+```
+```js
+export default function Profile(props){
+    return(<>
+        <h1>Passing props as function</h1>
+        <button onClick={props.data}>Click me</button>
+    </>)
+}
+```
 # Creating button of show or hide content on onClick event
 ```js
 import { useState } from "react"
