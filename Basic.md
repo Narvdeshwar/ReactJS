@@ -290,3 +290,55 @@ export default class Profile extends Component{
     }
 }
 ```
+#### 2. Whenever our state is updates
+```js
+import { useState } from "react"
+import Profile from "./Profile"
+export default function App(){
+    const [name,setName]=useState('Ashrith');
+    return(
+        <>
+            <h1>This is App component {name}</h1>
+            <button onClick={()=>setName('Sam')}>Click Me!</button>
+            <Profile/>
+        </>
+    )
+}
+```
+```js
+import { Component } from "react";
+
+export default class Profile extends Component{
+    render(){
+        console.log('render is called because this component is called');
+        return(<h1>This is user component</h1>)
+    }
+}
+```
+In above render called twice time become name,setName state get changed.
+#### 3. Whenever props updates
+```js
+import { useState } from "react"
+import Profile from "./Profile"
+export default function App(){
+    const [name,setName]=useState('Ashrith');
+    return(
+        <>
+            <h1>This is App component</h1>
+            <Profile name={name}/>
+            <button onClick={()=>setName('Sam')}>Click Me!</button>
+        </>
+    )
+}
+```
+```js
+import { Component } from "react";
+
+export default class Profile extends Component{
+    render(){
+        console.log(`render is called because this component is called ${this.props.name}`);
+        return(<h1>This is user component</h1>)
+    }
+}
+```
+In above render called twice time become name,setName state get changed.
