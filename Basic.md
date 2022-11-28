@@ -262,3 +262,31 @@ export default class App extends Component{
     }
 }
 ```
+## Render life cycle
+render method execute after the representation.It render all html code
+### render() method called  -
+1. Whenever our component is ready
+2. Whenever state is updates
+3. whenever props is updates
+#### 1. Whenever our component is ready
+```js
+import Profile from "./Profile"
+export default function App(){
+    return(
+        <>
+            <h1>This is App component</h1>
+            <Profile/>
+        </>
+    )
+}
+```
+```js
+import { Component } from "react";
+
+export default class Profile extends Component{
+    render(){
+        console.log('render is called because this component is called');
+        return(<h1>This is user component</h1>)
+    }
+}
+```
