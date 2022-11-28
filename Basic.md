@@ -232,6 +232,33 @@ export default function Profile(){
     const [user,setUser]=useState(2)
     return(
         user==1?<h1>Hello user {user}</h1>:user==2?<h1>Hello user {user}</h1> : <h1>Welcome Guest</h1>
-    )
+    )![Screenshot 2022-11-28 191312](https://user-images.githubusercontent.com/56790381/204292949-47977948-6075-4787-9a53-a48b44d7ab33.jpg)
+
+}
+```
+# React life cycle
+Every component in React goes through a lifecycle of events. I like to think of them as going through a cycle of birth, growth, and death.
+
+1. Mounting – Birth of your component
+2. Update – Growth of your component
+3. Unmount – Death of your component
+
+![Screenshot 2022-11-28 191312](https://user-images.githubusercontent.com/56790381/204293157-7423ae37-a91b-4106-bdb3-29e35746d332.jpg)
+
+## Constructor life cycle
+we can define states in our constructor till out html content is getting ready.
+### Not to do in constructor
+do not call api in the constructor
+```js
+import { Component } from "react";
+
+export default class App extends Component{
+    constructor(){
+        super();
+        console.log("testing this page!");
+    }
+    render(){
+        return(<h1>Hello i am class App</h1>)
+    }
 }
 ```
