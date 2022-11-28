@@ -343,6 +343,4 @@ export default class Profile extends Component{
 ```
 In above render called twice time become name,setName state get changed.
 ## Q: Can we pass props in our constructor.
-## ```js 
-yes,we can pass props in constructor and we can access the **this.props**
-```
+## Ans: yes,we can pass props in constructor and we can access the **this.props**
