@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     passwordGenerator();
-  }, [length, numberAllowed, charAllowed]);
+  }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyClipBoard = () => {
     navigator.clipboard.writeText(password).then(() => {
