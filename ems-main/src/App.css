@@ -1,0 +1,7 @@
+*{
+  color: black;
+}
+
+#tasklist::-webkit-scrollbar{
+  overflow: hidden;
+}
